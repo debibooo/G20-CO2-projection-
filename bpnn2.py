@@ -17,11 +17,11 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 from sklearn import preprocessing
 from sklearn.metrics import mean_squared_error
-inpath = 'C:\\Users\\PC\\OneDrive - 中山大学\\文档\\ABC-SVR\\data'
+inpath = '...\\ABC-SVR\\data'
 ems = pd.read_excel(inpath + '\\ems_g20.xlsx', sheet_name=0)
 emfactor = pd.read_excel(inpath + '\\emfactor_g20.xlsx', sheet_name=0, header=0)
 countries = np.asarray(ems.loc[:, 'Country Name'])
-future_x = pd.read_excel(inpath + '\\future_g20_SSP4_45.xlsx', sheet_name='BAU_wi_NDC', header=0)
+future_x = pd.read_excel(inpath + '\\future_g20_SSP4_45.xlsx', sheet_name='SRR_wi_NDC', header=0)
 r2_test_list = []
 r2_train_list=[]
 rmse_test_list = []
@@ -381,7 +381,7 @@ test_y_list=pd.DataFrame(test_y_list)
 #test_y_pre_list=pd.DataFrame(test_y_pre_list)
 #train_yy_pre_list=pd.DataFrame(train_yy_pre_list)
 #train_yy_list=pd.DataFrame(train_yy_list)
-writer = pd.ExcelWriter(r'C:\\Users\PC\OneDrive - 中山大学\文档\ABC-SVR\data\result\BPNN\1x.xlsx')
+writer = pd.ExcelWriter(r'...\result\BPNN\1x.xlsx')
 result.to_excel(writer, 'Rscore')
 #future.to_excel(writer, 'future_y')
 #test_y_list.to_excel(writer, 'test_y')
